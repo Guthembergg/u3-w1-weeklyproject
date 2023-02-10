@@ -6,11 +6,11 @@ import MyFooter from "./Components/MyFooter";
 
 function App() {
   return (
-    <body>
+    <div>
       <MyNav />
       <GenresComponent />
       <MyFooter />
-    </body>
+    </div>
   );
 }
 

@@ -1,4 +1,5 @@
 import { Nav, Navbar } from "react-bootstrap";
+import SingleMovie from "./SingleMovie";
 
 const GenresComponent = () => {
   return (
@@ -42,140 +43,32 @@ const GenresComponent = () => {
           <i className="fa fa-th icons"></i>
         </div>
       </div>
-      <h4>Trending Now</h4>
+      <h4>The Lord Of The Rings</h4>
       <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xl-6 mb-4 no-gutters text-center">
-        <div className="col mb-2 px-1">
-          <img
-            className="img-fluid"
-            src={require("../assets/1.png")}
-            alt="movie "
-          />
-        </div>
-        <div className="col mb-2 px-1">
-          <img
-            className="img-fluid"
-            src={require("../assets/2.png")}
-            alt="movie "
-          />
-        </div>
-        <div className="col mb-2 px-1">
-          <img
-            className="img-fluid"
-            src={require("../assets/3.png")}
-            alt="movie "
-          />
-        </div>
-        <div className="col mb-2 px-1">
-          <img
-            className="img-fluid"
-            src={require("../assets/4.png")}
-            alt="movie "
-          />
-        </div>
-        <div className="col mb-2 px-1">
-          <img
-            className="img-fluid"
-            src={require("../assets/5.png")}
-            alt="movie "
-          />
-        </div>
-        <div className="col mb-2 px-1">
-          <img
-            className="img-fluid"
-            src={require("../assets/6.png")}
-            alt="movie "
-          />
-        </div>
+        <SingleMovie movie="the Lord of the rings fellowship" />
+        <SingleMovie movie="the Lord of the rings towers" />
+        <SingleMovie movie="the Lord of the rings king" />
+        <SingleMovie movie="The hobbit journey" />
+        <SingleMovie movie="the hobbit smaug" />
+        <SingleMovie movie="the hobbit battle " />
       </div>
-      <h4>Watch it Again</h4>
+      <h4>Harry Potter</h4>
       <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xl-6 mb-4 no-gutters text-center">
-        <div className="col mb-2 px-1">
-          <img
-            className="img-fluid"
-            src={require("../assets/7.png")}
-            alt="movie "
-          />
-        </div>
-        <div className="col mb-2 px-1">
-          <img
-            className="img-fluid"
-            src={require("../assets/8.png")}
-            alt="movie "
-          />
-        </div>
-        <div className="col mb-2 px-1">
-          <img
-            className="img-fluid"
-            src={require("../assets/9.png")}
-            alt="movie "
-          />
-        </div>
-        <div className="col mb-2 px-1">
-          <img
-            className="img-fluid"
-            src={require("../assets/10.png")}
-            alt="movie "
-          />
-        </div>
-        <div className="col mb-2 px-1">
-          <img
-            className="img-fluid"
-            src={require("../assets/11.png")}
-            alt="movie "
-          />
-        </div>
-        <div className="col mb-2 px-1">
-          <img
-            className="img-fluid"
-            src={require("../assets/12.png")}
-            alt="movie "
-          />
-        </div>
+        <SingleMovie movie="harry " />
+        <SingleMovie movie="harry potter prince" />
+        <SingleMovie movie="harry potter azkaban" />
+        <SingleMovie movie="harry potter order" />
+        <SingleMovie movie="harry potter part 1" />
+        <SingleMovie movie="harry potter " />
       </div>
-      <h4>New Releases</h4>
-      <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xl-6 pb-4 no-gutters text-center">
-        <div className="col mb-2 px-1">
-          <img
-            className="img-fluid"
-            src={require("../assets/13.png")}
-            alt="movie "
-          />
-        </div>
-        <div className="col mb-2 px-1">
-          <img
-            className="img-fluid"
-            src={require("../assets/14.png")}
-            alt="movie "
-          />
-        </div>
-        <div className="col mb-2 px-1">
-          <img
-            className="img-fluid"
-            src={require("../assets/15.png")}
-            alt="movie "
-          />
-        </div>
-        <div className="col mb-2 px-1">
-          <img
-            className="img-fluid"
-            src={require("../assets/16.png")}
-            alt="movie "
-          />
-        </div>
-        <div className="col mb-2 px-1">
-          <img
-            className="img-fluid"
-            src={require("../assets/17.png")}
-            alt="movie "
-          />
-        </div>
-        <div className="col mb-2 px-1">
-          <img
-            className="img-fluid"
-            src={require("../assets/18.png")}
-            alt="movie "
-          />
-        </div>
+      <h4>Jurassic Park</h4>
+      <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xl-6 mb-4 no-gutters text-center">
+        <SingleMovie movie="Jurassic Park " />
+        <SingleMovie movie="The Lost World: Jurassic Park " />
+        <SingleMovie movie="Jurassic Park III" />
+        <SingleMovie movie="Jurassic World " />
+        <SingleMovie movie="Jurassic World fallen" />
+        <SingleMovie movie="Jurassic World dominion" />
       </div>
     </div>
   );
