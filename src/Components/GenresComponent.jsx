@@ -1,4 +1,4 @@
-import { Nav, Navbar } from "react-bootstrap";
+import { Dropdown, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import SingleMovie from "./SingleMovie";
 
 const GenresComponent = () => {
@@ -11,7 +11,7 @@ const GenresComponent = () => {
         <div className="d-flex">
           <h2 className="mb-4">TV Shows</h2>
           <div className="dropdown ml-4 mt-1">
-            <button
+            <Dropdown.Toggle
               className="btn btn-secondary btn-sm dropdown-toggle rounded-0"
               type="button"
               id="dropdownMenuButton"
@@ -21,21 +21,30 @@ const GenresComponent = () => {
               style={{ backgroundColor: "#221f1f" }}
             >
               Genres &nbsp;
-            </button>
-            <div
+            </Dropdown.Toggle>
+            <Dropdown
               className="dropdown-menu bg-dark"
               aria-labelledby="dropdownMenuButton"
             >
-              <a className="dropdown-item text-white bg-dark" href="#c">
+              <NavDropdown.Item
+                className="dropdown-item text-white bg-dark"
+                href="#c"
+              >
                 Comedy
-              </a>
-              <a className="dropdown-item text-white bg-dark" href="#c">
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                className="dropdown-item text-white bg-dark"
+                href="#c"
+              >
                 Drama
-              </a>
-              <a className="dropdown-item text-white bg-dark" href="#c">
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                className="dropdown-item text-white bg-dark"
+                href="#c"
+              >
                 Thriller
-              </a>
-            </div>
+              </NavDropdown.Item>
+            </Dropdown>
           </div>
         </div>
         <div>
