@@ -9,13 +9,13 @@ const MyNav = () => {
     >
       <Navbar.Brand className="navbar-brand" href="#w">
         <img
-          src="assets/logo.png"
+          src={require("../assets/logo.png")}
           alt=""
           style={{ width: "100px", height: "55px" }}
         />
       </Navbar.Brand>
 
-      <Navbar.Toggle className="navbar-toggler-icon"></Navbar.Toggle>
+      <Navbar.Toggle />
 
       <Navbar.Collapse
         className="collapse navbar-collapse"

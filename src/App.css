@@ -38,7 +38,8 @@
 }
 body {
   margin: 0;
-  background-color: #221f1f;
+  background-color: #221f1f !important;
+  height: 100%;
 }
 
 h2,
@@ -72,7 +73,7 @@ footer {
 
 .footer-links {
   text-align: left;
-  font-size: 0.8em;
+  font-size: 0.9em;
 }
 
 .footer-links p {
@@ -86,8 +87,8 @@ footer {
 }
 
 .footer-button {
-  color: #838383;
-  border-color: #838383;
+  color: #838383 !important;
+  border-color: #838383 !important;
 }
 
 .copyright {
