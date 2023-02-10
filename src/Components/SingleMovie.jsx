@@ -17,6 +17,7 @@ class SingleMovie extends Component {
       );
       if (response.ok) {
         const data = await response.json();
+        console.log(data);
         this.setState({
           movie: data.Search[0],
           isLoading: false,
