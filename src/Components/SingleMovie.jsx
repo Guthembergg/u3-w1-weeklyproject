@@ -68,7 +68,9 @@ class SingleMovie extends Component {
           )
         }
       >
-        {this.state.movie && <ModalComp movie={this.state.movie} />}
+        {this.state.movie && (
+          <ModalComp movie={this.state.movie} error={this.state.errorMessage} />
+        )}
 
         <Image
           className="img-fluid"

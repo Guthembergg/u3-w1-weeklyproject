@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Image, Spinner, Alert } from "react-bootstrap";
+import { Button, Spinner } from "react-bootstrap";
 import SingleMovie from "./SingleMovie";
 
 class MovieList extends Component {
@@ -45,11 +45,27 @@ class MovieList extends Component {
   render() {
     return (
       <>
-        {this.state.movie
-          .filter((movie) => movie.Type === "movie")
-          .map((el, i) => (
-            <SingleMovie movie={el} key={`movie-${i}`} />
-          ))}
+        {!this.state.hasError &&
+          !this.state.isLoading &&
+          this.state.movie
+            .filter((movie) => movie.Type === "movie")
+            .map((el, i) => <SingleMovie movie={el} key={`movie-${i}`} />)}
+        {this.state.hasError && !this.state.isLoading && (
+          <div style={{ color: "white" }}> {this.state.errorMessage} </div>
+        )}
+        {!this.state.hasError && this.state.isLoading && (
+          <div>
+            <Spinner
+              as="span"
+              animation="border"
+              size="sm"
+              role="status"
+              aria-hidden="true"
+              variant="light"
+            />
+            <span className="sr-only">Loading...</span>
+          </div>
+        )}
       </>
     );
   }
