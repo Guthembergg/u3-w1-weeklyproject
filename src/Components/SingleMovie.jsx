@@ -1,49 +1,54 @@
 import { Component } from "react";
-import { Image, Spinner, Alert } from "react-bootstrap";
+import { Image, Spinner, Alert, Modal, Button } from "react-bootstrap";
+import ModalComp from "./ModalComp";
 
 class SingleMovie extends Component {
   state = {
     movie: [],
-    isLoading: true,
+    isLoading: false,
     hasError: false,
     errorMessage: "",
     selected: false,
+    selectedMovie: "",
+    show: false,
   };
 
   fetchMovie = async () => {
     try {
       const response = await fetch(
-        `http://www.omdbapi.com/?apikey=46c9a463&s=${this.props.movie}`
+        `http://www.omdbapi.com/?apikey=46c9a463&i=${this.props.movie.imdbID}`
       );
       if (response.ok) {
         const data = await response.json();
         console.log(data);
         this.setState({
-          movie: data.Search[0],
-          isLoading: false,
+          movie: data,
+          // isLoading: false,
         });
       } else {
         this.setState({
-          isLoading: false,
-          hasError: true,
+          // isLoading: false,
+          // hasError: true,
           errorMessage: `Error loading content ERROR: ${response.status}`,
         });
       }
     } catch (error) {
       this.setState({
-        isLoading: false,
-        hasError: true,
+        // isLoading: false,
+        // hasError: true,
         errorMessage: `CATCH FATAL ERROR: ${error.message}`,
       });
     }
   };
   componentDidMount = () => {
     this.fetchMovie();
+    console.log(this.state.movie);
   };
 
   render() {
     return (
       <div
+        value={this.props.movie.Title}
         className="col mb-2 px-1"
         style={{
           borderBottom:
@@ -51,46 +56,45 @@ class SingleMovie extends Component {
               ? "1px solid grey"
               : "0px",
         }}
-        onClick={() => this.setState({ selected: !this.state.selected })}
+        onClick={(e) =>
+          this.setState(
+            {
+              selected: !this.state.selected,
+              selectedMovie: this.props.movie.Title,
+            },
+            () => {
+              console.log(this.state.selectedMovie);
+            }
+          )
+        }
       >
-        {this.state.hasError && !this.state.isLoading && (
-          <Alert variant="danger">
-            <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-            <p>{this.state.errorMessage}</p>
-          </Alert>
-        )}
+        {this.state.movie && <ModalComp movie={this.state.movie} />}
 
-        {this.state.isLoading && !this.state.hasError && (
-          <Spinner animation="border" role="status" variant="light"></Spinner>
-        )}
-        {!this.state.isLoading && !this.state.hasError && (
-          <Image
-            className="img-fluid"
-            style={{ aspectRatio: "0.67" }}
-            src={this.state.movie.Poster}
-            alt="movie "
-            fluid
-          />
-        )}
-        {this.state.selected &&
-          !this.state.hasError &&
-          !this.state.isLoading && (
+        <Image
+          className="img-fluid"
+          style={{ aspectRatio: "0.67" }}
+          src={this.props.movie.Poster}
+          alt="movie "
+          fluid
+        />
+
+        {this.state.selected && (
+          <div
+            className="pt-3"
+            style={{
+              color: "white",
+            }}
+          >
+            {this.props.movie.Title}
             <div
-              className="pt-3"
               style={{
-                color: "white",
+                color: "orange",
               }}
             >
-              {this.state.movie.Title}
-              <div
-                style={{
-                  color: "orange",
-                }}
-              >
-                {this.state.movie.Year}
-              </div>
+              {this.props.movie.Year}
             </div>
-          )}
+          </div>
+        )}
       </div>
     );
   }

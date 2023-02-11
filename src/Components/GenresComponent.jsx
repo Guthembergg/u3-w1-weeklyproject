@@ -1,4 +1,5 @@
 import { Dropdown, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import MovieList from "./MovieList";
 import SingleMovie from "./SingleMovie";
 
 const GenresComponent = () => {
@@ -54,30 +55,15 @@ const GenresComponent = () => {
       </div>
       <h4>The Lord Of The Rings</h4>
       <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xl-6 mb-4 no-gutters text-center">
-        <SingleMovie movie="the Lord of the rings fellowship" />
-        <SingleMovie movie="the Lord of the rings towers" />
-        <SingleMovie movie="the Lord of the rings king" />
-        <SingleMovie movie="The hobbit journey" />
-        <SingleMovie movie="the hobbit smaug" />
-        <SingleMovie movie="the hobbit battle " />
+        <MovieList movie={"the lord of the rings"} />
       </div>
       <h4>Harry Potter</h4>
       <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xl-6 mb-4 no-gutters text-center">
-        <SingleMovie movie="harry secrets" />
-        <SingleMovie movie="harry potter prince" />
-        <SingleMovie movie="harry potter azkaban" />
-        <SingleMovie movie="harry potter order" />
-        <SingleMovie movie="harry potter part 1" />
-        <SingleMovie movie="harry potter " />
+        <MovieList movie={"harry Potter"} />
       </div>
       <h4>Jurassic Park</h4>
       <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xl-6 mb-4 no-gutters text-center">
-        <SingleMovie movie="Jurassic Park " />
-        <SingleMovie movie="The Lost World: Jurassic Park " />
-        <SingleMovie movie="Jurassic Park III" />
-        <SingleMovie movie="Jurassic World " />
-        <SingleMovie movie="Jurassic World fallen" />
-        <SingleMovie movie="Jurassic World dominion" />
+        <MovieList movie={"Jurassic Park"} />
       </div>
     </div>
   );
