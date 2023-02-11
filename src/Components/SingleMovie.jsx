@@ -56,17 +56,6 @@ class SingleMovie extends Component {
               ? "1px solid grey"
               : "0px",
         }}
-        onClick={(e) =>
-          this.setState(
-            {
-              selected: !this.state.selected,
-              selectedMovie: this.props.movie.Title,
-            },
-            () => {
-              console.log(this.state.selectedMovie);
-            }
-          )
-        }
       >
         {this.state.movie && (
           <ModalComp movie={this.state.movie} error={this.state.errorMessage} />
@@ -78,6 +67,17 @@ class SingleMovie extends Component {
           src={this.props.movie.Poster}
           alt="movie "
           fluid
+          onClick={(e) =>
+            this.setState(
+              {
+                selected: !this.state.selected,
+                selectedMovie: this.props.movie.Title,
+              },
+              () => {
+                console.log(this.state.selectedMovie);
+              }
+            )
+          }
         />
 
         {this.state.selected && (

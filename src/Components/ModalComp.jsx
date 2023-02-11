@@ -37,6 +37,9 @@ function ModalComp(props) {
                 <p className="" style={{ color: "blue", fontWeight: "700" }}>
                   {props.movie.Released}{" "}
                 </p>
+                <p className="" style={{ color: "grey", fontWeight: "700" }}>
+                  {props.movie.Runtime}{" "}
+                </p>
                 <p
                   className=" mr-5"
                   style={{ color: "green", fontWeight: "700" }}
